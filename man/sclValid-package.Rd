@@ -9,11 +9,11 @@
 What the package does (one paragraph).
 }
 \author{
-\strong{Maintainer}: First Last \email{first.last@example.com}
+\strong{Maintainer}: Owen Visser \email{owviss@gmail.com}
 
 Authors:
 \itemize{
-  \item First Last \email{first.last@example.com}
+  \item Owen Visser \email{owviss@gmail.com}
 }
 
 }

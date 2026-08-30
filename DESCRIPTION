@@ -2,7 +2,12 @@ Package: sclValid
 Title: What the Package Does (One Line, Title Case)
 Version: 0.1.0
 Authors@R:
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"))
+    person(
+      given = "Owen",
+      family = "Visser",
+      role = c("aut", "cre"),
+      email = "owviss@gmail.com"
+    )
 Description: What the package does (one paragraph).
 License: MIT + file LICENSE
 Encoding: UTF-8
