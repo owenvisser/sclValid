@@ -103,7 +103,7 @@
 #' @examples
 #' sce <- make_sce(example_data, example_labels)
 #'
-#' sce <- run_cidr(
+#' sce <- run_raceid(
 #'   sce,
 #'   cluster_sizes = 2:3
 #' )

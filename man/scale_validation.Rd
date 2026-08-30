@@ -35,7 +35,7 @@ indicate better performance and are reversed after scaling.
 }
 \examples{
 sce <- make_sce(example_data, example_labels)
-sce <- run_cidr(sce, cluster_sizes = 2:3)
+sce <- run_raceid(sce, cluster_sizes = 2:3)
 sce <- run_validation(sce, measures = c("ARI", "DI", "IGP", "SW"))
 sce <- scale_validation(sce)
 

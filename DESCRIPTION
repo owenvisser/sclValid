@@ -2,14 +2,28 @@ Package: sclValid
 Title: What the Package Does (One Line, Title Case)
 Version: 0.1.0
 Authors@R:
-    person(
-      given = "Owen",
-      family = "Visser",
-      role = c("aut", "cre"),
-      email = "owviss@gmail.com"
+    c(
+      person(
+        given = "Owen",
+        family = "Visser",
+        role = c("aut", "cre"),
+        email = "owviss@gmail.com"
+      ),
+      person(
+        given = "Justina",
+        family = "Žurauskienė",
+        role = "ctb",
+        comment = "pcaReduce compatibility code adapted from the pcaReduce package"
+      ),
+      person(
+        given = "Christopher",
+        family = "Yau",
+        role = "ctb",
+        comment = "pcaReduce compatibility code adapted from the pcaReduce package"
+      )
     )
 Description: What the package does (one paragraph).
-License: MIT + file LICENSE
+License: GPL (>= 3)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 Config/roxygen2/version: 8.1.0
@@ -18,7 +32,7 @@ Depends:
 LazyData: true
 Imports:
     cccd,
-    cidr,
+    cli,
     clue,
     igraph,
     mclust,
@@ -31,8 +45,6 @@ Imports:
     S4Vectors,
     SingleCellExperiment,
     SummarizedExperiment
-Remotes:
-    VCCRI/CIDR
 LinkingTo: 
     Rcpp,
     RcppArmadillo

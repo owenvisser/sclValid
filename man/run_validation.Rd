@@ -54,8 +54,11 @@ clustering solutions stored in the \code{colData} of a
 \code{SingleCellExperiment}.
 }
 \details{
-Clustering solutions are detected automatically from columns produced by
-the clustering functions in sclValid. A subset of clustering solutions may
+Clustering solutions are detected automatically from columns produced by the
+built-in clustering functions in \code{sclValid}, as well as from user-defined
+clustering methods registered with \code{run_custom_clustering()}. This allows
+clustering methods not implemented directly in \code{sclValid} to be evaluated
+using the same validation framework. A subset of clustering solutions may
 instead be selected with \code{clusterings}.
 
 Shared quantities such as pairwise distances and nearest-neighbor lists are
@@ -76,6 +79,34 @@ still be calculated.
 AD, ADM, APN, and BSI require reduced clustering solutions and therefore
 trigger reclustering of reduced versions of the dataset.
 
+User-defined clustering methods may be registered with
+\code{run_custom_clustering()}. The supplied clustering function should accept
+the expression matrix as its first argument, with features in rows and
+observations in columns, and must return one cluster assignment per
+observation. Additional arguments may be supplied through
+\code{run_custom_clustering()}.
+
+A general custom clustering workflow is:
+
+\preformatted{
+my_clustering <- function(data, ...) {
+  clusters <- clustering_method(data, ...)
+  clusters
+}
+
+sce <- run_custom_clustering(
+  sce,
+  fun = my_clustering,
+  name = "MyClustering"
+)
+
+sce <- run_validation(sce)
+}
+
+The custom function and its supplied arguments are retained internally so
+that stability-based validation measures can rerun the same clustering
+procedure on reduced datasets.
+
 By default, \code{run_validation()} displays a progress bar during reduced
 reclustering while suppressing detailed clustering messages. Set
 \code{progress = FALSE} to disable the progress bar, or \code{verbose = TRUE} to
@@ -85,7 +116,7 @@ solutions.
 }
 \examples{
 sce <- make_sce(example_data, example_labels)
-sce <- run_cidr(sce, cluster_sizes = 2:3)
+sce <- run_raceid(sce, cluster_sizes = 2:3)
 
 sce <- run_validation(
   sce,

@@ -16,5 +16,11 @@ Authors:
   \item Owen Visser \email{owviss@gmail.com}
 }
 
+Other contributors:
+\itemize{
+  \item Justina Žurauskienė (pcaReduce compatibility code adapted from the pcaReduce package) [contributor]
+  \item Christopher Yau (pcaReduce compatibility code adapted from the pcaReduce package) [contributor]
+}
+
 }
 \keyword{internal}

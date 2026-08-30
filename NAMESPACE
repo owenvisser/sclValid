@@ -2,7 +2,7 @@
 
 export(check_input)
 export(make_sce)
-export(run_cidr)
+export(run_custom_clustering)
 export(run_pcareduce)
 export(run_raceid)
 export(run_rank_aggregation)
