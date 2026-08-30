@@ -42,15 +42,6 @@ The package includes a small example dataset derived from the single-cell RNA-se
 
 Several clustering procedures are available.
 
-### CIDR
-
-```r
-sce <- run_cidr(
-  sce,
-  cluster_sizes = 2:4
-)
-```
-
 ### pcaReduce
 
 ```r
@@ -187,11 +178,6 @@ sce <- make_sce(
   example_labels
 )
 
-sce <- run_cidr(
-  sce,
-  cluster_sizes = 2:4
-)
-
 sce <- run_pcareduce(
   sce,
   cluster_sizes = 2:4,
@@ -250,7 +236,7 @@ A package-specific citation entry may also be added in a future release.
 
 The package includes implementations or adaptations of established clustering validation measures, including methods based on work by Dunn, Rousseeuw, Hubert and Arabie, Datta and Datta, Kapp and Tibshirani, and Pihur and colleagues.
 
-The clustering procedures implemented or supported in the package include CIDR, pcaReduce, RaceID, K-means, hierarchical clustering, Louvain clustering, and Leiden clustering.
+The clustering procedures implemented or supported in the package include pcaReduce, RaceID, K-means, hierarchical clustering, Louvain clustering, and Leiden clustering.
 
 See the individual function documentation for complete references.
 
