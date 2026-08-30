@@ -1,0 +1,20 @@
+bibentry(
+  bibtype = "Article",
+  title = "Integrating Multiple Clustering Techniques and Performance Measures via Ranking for scRNA-Seq Data",
+  author = c(
+    person("Owen", "Visser"),
+    person("Somnath", "Datta")
+  ),
+  journal = "Statistics in Medicine",
+  year = "2025",
+  volume = "44",
+  number = "28-30",
+  pages = "e70331",
+  doi = "10.1002/sim.70331",
+  textVersion = paste(
+    "Visser O, Datta S.",
+    "Integrating Multiple Clustering Techniques and Performance Measures via Ranking for scRNA-Seq Data.",
+    "Statistics in Medicine. 2025;44(28-30):e70331.",
+    "doi:10.1002/sim.70331"
+  )
+)
