@@ -6,7 +6,7 @@
 \alias{sclValid-package}
 \title{sclValid}
 \description{
-What the package does (one paragraph).
+Provides tools for clustering, validation, and ranking of single-cell RNA sequencing data. The package implements multiple clustering approaches, a collection of internal, external, and stability-based validation measures, and rank aggregation for comparing clustering solutions. User-defined clustering functions can also be incorporated into the validation framework. Methods are based in part on Visser and Datta (2025) [doi:10.1002/sim.70331](doi:10.1002/sim.70331).
 }
 \author{
 \strong{Maintainer}: Owen Visser \email{owviss@gmail.com}
