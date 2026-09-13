@@ -1,5 +1,7 @@
 # sclValid
 
+`sclValid` is now available on [CRAN](https://cran.r-project.org/package=sclValid)
+
 `sclValid` is an R package for clustering and validating single-cell RNA sequencing data. It provides a unified workflow for applying multiple clustering methods, calculating internal, external, and stability-based validation measures, scaling validation results, and aggregating them into an overall ranking of clustering solutions.
 
 The methodology implemented in this package is based on:
