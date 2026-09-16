@@ -13,7 +13,7 @@ Authors@R:
         given = "Somnath",
         family = "Datta",
         role = c("aut", "ctb")
-      )
+      ),
       person(
         given = "Justina",
         family = "Žurauskienė",
