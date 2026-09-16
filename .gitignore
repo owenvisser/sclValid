@@ -1,2 +1,13 @@
-.Rproj.user
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+.Renviron
+
 dev/
+revdep/
+
+CRAN-SUBMISSION
+
+*.Rcheck/
+*.tar.gz
