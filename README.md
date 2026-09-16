@@ -2,7 +2,7 @@
 
 `sclValid` is now available on [CRAN](https://cran.r-project.org/package=sclValid)
 
-`sclValid` is an R package for clustering and validating single-cell RNA sequencing data. It provides a unified workflow for applying multiple clustering methods, calculating internal, external, and stability-based validation measures, scaling validation results, and aggregating them into an overall ranking of clustering solutions.
+`sclValid` is an R package for clustering and validating single-cell RNA sequencing data. It provides a unified workflow for applying built-in or user-defined clustering methods, calculating internal, external, and stability-based validation measures, scaling validation results, and aggregating them into an overall ranking of clustering solutions.
 
 `sclValid` is conceptually related to the [`clValid`](https://cran.r-project.org/package=clValid) package. Both packages use clustering validation measures to assess and compare clustering solutions, but they differ in the type of perturbation used for stability assessment. In `clValid`, stability is evaluated by perturbing the features used to define the clustering. In `sclValid`, the samples being clustered are perturbed instead. For single-cell RNA sequencing data, this corresponds to removing cells and evaluating how stable the resulting clustering is relative to the clustering obtained from the full dataset.
 
@@ -44,7 +44,44 @@ The package includes a small example dataset derived from the single-cell RNA-se
 
 ## Clustering
 
-Several clustering procedures are available.
+Several clustering procedures are available directly through `sclValid`. User-defined clustering functions can also be incorporated into the same validation workflow with `run_custom_clustering()`.
+
+### Custom clustering functions
+
+Custom clustering functions should take the expression matrix as input and return a vector of cluster assignments, with one assignment for each cell. Additional arguments can be passed through `run_custom_clustering()`.
+
+For example, a simple custom K-means function can be defined as:
+
+```r
+custom_kmeans <- function(data, k) {
+  stats::kmeans(
+    t(data),
+    centers = k
+  )$cluster
+}
+```
+
+The function can then be applied to the `SingleCellExperiment` object with:
+
+```r
+sce <- run_custom_clustering(
+  sce,
+  fun = custom_kmeans,
+  name = "CustomKmeans_cs3",
+  k = 3
+)
+```
+
+The resulting clustering is stored in `colData` and can be used by the validation framework in the same way as clustering solutions produced by the built-in methods:
+
+```r
+sce <- run_validation(
+  sce,
+  clusterings = "CustomKmeans_cs3"
+)
+```
+
+This allows clustering procedures from other packages, or entirely user-defined methods, to be evaluated using the same validation and ranking framework provided by `sclValid`.
 
 ### pcaReduce
 
