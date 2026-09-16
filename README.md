@@ -285,6 +285,6 @@ See the individual function documentation for complete references.
 
 License information is provided in the package `DESCRIPTION` file.
 
-## Author
+## Authors
 
-Owen Visser
+Owen Visser, Somnath Datta
